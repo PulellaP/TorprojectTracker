@@ -11,5 +11,7 @@ def get_obj(endpoint, listnum):
     return(json_python_obj[listnum])
 
 entry_object = get_obj(request, 0)
-print(entry_object)
+#print(entry_object)
 print(entry_object["sha"])
+print(entry_object["committer"]["login"])
+print(entry_object["commit"]["committer"]["date"])
