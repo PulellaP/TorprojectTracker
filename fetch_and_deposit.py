@@ -10,8 +10,11 @@ def get_obj(endpoint, listnum):
     json_python_obj = json.loads(string)
     return(json_python_obj[listnum])
 
+
+
+
+def get_one_entry(json_single):
+    return(json_single["sha"], json_single["committer"]["login"], json_single["commit"]["committer"]["date"])
+
 entry_object = get_obj(request, 0)
-#print(entry_object)
-print(entry_object["sha"])
-print(entry_object["committer"]["login"])
-print(entry_object["commit"]["committer"]["date"])
+print(get_one_entry(entry_object))
